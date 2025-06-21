@@ -23,9 +23,9 @@
                 <td class="py-3 px-6 text-left">{{ post.user?.name || 'N/A' }}</td>
                 <td class="py-3 px-6 text-left">{{ post.category?.title || 'N/A' }}</td>
                 <td class="py-3 px-6 text-left">
-                  <a :href="'/admin/blog/posts/' + post.id + '/edit'" class="text-blue-500 hover:underline">
+                  <NuxtLink :to="`/blog/${post.id}`" class="text-blue-500 hover:underline">
                     {{ post.title }}
-                  </a>
+                  </NuxtLink>
                 </td>
                 <td class="py-3 px-6 text-left">{{ post.published_at }}</td>
               </tr>
@@ -59,21 +59,19 @@ const getPosts = () => {
   fetch('http://localhost/api/blog/posts')
       .then(response => {
         if (!response.ok) {
-          // Обробляємо помилки, якщо відповідь HTTP не успішна
           throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return response.json(); // Парсимо відповідь як JSON
+        return response.json();
       })
       .then(data => {
-        console.log('API Response:', data); // Виводимо повну відповідь API в консоль браузера
-        // Laravel повертає дані в об'єкті з ключем 'data', тому використовуємо data.data
-        posts.value = data.data; // Оновлюємо реактивну змінну з отриманими постами
+        console.log('API Response:', data);
+        posts.value = data.data;
       })
       .catch(error => {
-        console.error('There was an error fetching the posts:', error); // Обробка помилок
+        console.error('There was an error fetching the posts:', error);
       })
       .finally(() => {
-        loading.value = false; // Завершуємо завантаження
+        loading.value = false;
       });
 };
 
@@ -84,7 +82,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
- */
+ *
 .container {
   max-width: 1200px;
 }

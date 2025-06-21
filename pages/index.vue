@@ -4,7 +4,7 @@
     <p class="text-lg mb-6">Оберіть, яку таблицю ви хочете переглянути:</p>
 
     <div class="space-y-4">
-      <NuxtLink to="/blog-posts" class="block w-64 mx-auto py-3 px-6 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+      <NuxtLink to="/blog-posts" class="block w-64 mx-auto py-3 px-6 bg-green-600 text-white rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
         Переглянути Блог Пости (Базова таблиця)
       </NuxtLink>
       <NuxtLink to="/blog-posts-ui" class="block w-64 mx-auto py-3 px-6 bg-purple-600 text-white rounded-lg shadow-md hover:bg-purple-700 transition duration-300">
